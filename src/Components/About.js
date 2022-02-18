@@ -77,15 +77,115 @@ const About = () => {
                         & Mentor
                       </p>
                     </div>
+                    <Row className="pt-3 pb-3 pt-md-3 pb-md-3 justify-content-center text-center">
+                      <Col md={6}>
+                        <div className="ms-2">
+                          <h6 className="text-primary">
+                            <u>Contact details:</u>
+                          </h6>
+                          <p className="mb-0">
+                            <a
+                              href="tel:9686409060"
+                              className="text-decoration-none text-dark"
+                            >
+                              <i className="fa fa-phone text-primary"></i>+91
+                              9686409060
+                            </a>
+                          </p>
+                          <p className="mb-0">
+                            <i className="fas fa-envelope text-primary"></i>
+                            <a
+                              href="nivarti638@gmail.com"
+                              className="text-decoration-none text-dark"
+                            >
+                              {" "}
+                              nivarti638@gmail.com
+                            </a>
+                          </p>
+                          <p className="mb-0">
+                            <a
+                              href="www.nivartijayaram.com"
+                              className="text-decoration-none text-dark"
+                            >
+                              <i className="fa fa-globe text-primary"></i>
+                              www.nivartijayaram.com
+                            </a>
+                          </p>
+                        </div>
+                      </Col>
+                      <Col md={4}>
+                        <div>
+                          <h6 className="text-primary">
+                            <u>Social Media:</u>
+                          </h6>
+                          <a href="https://www.linkedin.com/in/nivartijayaram">
+                            {" "}
+                            <i className="fab fa-linkedin fs-3 text-primary mx-2"></i>
+                          </a>
+                          <a href="https://www.youtube.com/nivartijayaram">
+                            <i class="fab fa-youtube fs-3 text-danger mx-2"></i>
+                          </a>
+                        </div>
+                      </Col>
+                    </Row>
                   </Col>
                   <Col md={6}>
                     <div className="">
-                      <div className="ratio ratio-1x1">
+                      {/* <div className="ratio ratio-1x1">
                         <iframe
                           src="https://designrr.page?id=152330&token=742669168&type=FP&h=6713"
                           title="IC Agile FlipBook"
                         ></iframe>
-                      </div>
+                      </div> */}
+                      <h4 className="text-primary">Personal Profile</h4>
+                      <p>
+                        “Challenge the status quo and continuous self-discovery
+                        through Unlearning” is what I strongly believe in and it
+                        helps me in extending my horizons. I have published a
+                        book on Unlearning that outlines the various aspects of
+                        Unlearning and it’s significance in personal or
+                        organizational transformation journey.
+                      </p>
+                      <h4 className="text-primary">Training Experience</h4>
+                      <ul>
+                        <li>
+                          DASA DevOps Coach - Trained more than 50 People across
+                          the globe on DevOps Coach Program
+                        </li>
+                        <li>
+                          ICAgile Training Programs - Trained more than 100
+                          People across the globe on various IC Agile
+                          Certifications
+                        </li>
+                        <li>
+                          PMI Certification Programs - Trained more than 100
+                          People across the globe on various PMI Certifications
+                        </li>
+                        <li>
+                          Scaled Agile Certification Programs - Trained more
+                          than 100 People across the globe on various SAFe
+                          Certifications
+                        </li>
+                        <li>
+                          Devised and curated Experiential learning Programs for
+                          Scrum Masters & Agile Coaches
+                        </li>
+                        <li>
+                          Leadership Training Programs - Trained more than 100
+                          Senior Leaders & Executives on "Leader as a Coach"
+                          program
+                        </li>
+                      </ul>
+                      <h4 className="text-primary">Skills & Abilities</h4>
+                      <ul>
+                        <li>
+                          Enterprise Transformation expertise (Agile, DevOps,
+                          Cloud, BPM, OPM, Payments etc)
+                        </li>
+                        <li>Training from Back of the Room</li>
+                        <li>Executive Coaching</li>
+                        <li>Leadership Development</li>
+                      </ul>
                     </div>
                   </Col>
                 </Row>
@@ -144,16 +244,122 @@ const About = () => {
                         NLP Coach, Enterprise Agile Coach, Transformation
                         Leader, Speaker & Mentor
                       </p>
+                      <h6 className="text-center text-primary">
+                        "DREAMS COME TRUE THROUGH SMART WORK, Focus, Hard work,
+                        and Persistence."
+                      </h6>
                     </div>
+
+                    <Row className="pt-3 pb-3 pt-md-3 pb-md-3 justify-content-center text-center">
+                      <Col md={6}>
+                        <div className="ms-2">
+                          <h6 className="text-primary">
+                            <u>Contact details:</u>
+                          </h6>
+                          <p className="mb-0">
+                            <a
+                              href="tel:7259882396"
+                              className="text-decoration-none text-dark"
+                            >
+                              <i className="fa fa-phone text-primary"></i>+91
+                              7259882396
+                            </a>
+                          </p>
+                          <p className="mb-0">
+                            <i className="fas fa-envelope text-primary"></i>
+                            <a
+                              href="anuravi625@gmail.com"
+                              className="text-decoration-none text-dark"
+                            >
+                              {" "}
+                              anuravi625@gmail.com
+                            </a>
+                          </p>
+                          <p className="mb-0">
+                            {/* <a
+                              href="www.nivartijayaram.com"
+                              className="text-decoration-none text-dark"
+                            >
+                              <i className="fa fa-globe text-primary"></i>
+                              www.nivartijayaram.com
+                            </a> */}
+                          </p>
+                        </div>
+                      </Col>
+                      <Col md={4}>
+                        <div>
+                          <h6 className="text-primary">
+                            <u>Social Media:</u>
+                          </h6>
+                          <a href="https://www.linkedin.com/in/nivartijayaram">
+                            {" "}
+                            <i className="fab fa-linkedin fs-3 text-primary mx-2"></i>
+                          </a>
+                          <a href="https://www.youtube.com/nivartijayaram">
+                            <i class="fab fa-youtube fs-3 text-danger mx-2"></i>
+                          </a>
+                        </div>
+                      </Col>
+                    </Row>
                   </Col>
                   <Col md={6}>
                     <div className="">
-                      <div className="ratio ratio-1x1">
+                      {/* <div className="ratio ratio-1x1">
                         <iframe
                           src="https://designrr.page?id=156312&token=2621835926&type=FP&h=4433"
                           title="IC Agile FlipBook"
                         ></iframe>
-                      </div>
+                      </div> */}
+                      <h4 className="text-primary">Personal Profile</h4>
+                      <p>
+                        "I believe every individual has immense talent and when
+                        channelized and nurtured, it will result in great
+                        outcomes for the individuals and the organizations they
+                        are associated with. I have co-contributed to scrum
+                        guide V3.0."
+                      </p>
+                      <h4 className="text-primary">Training Experience</h4>
+                      <ul>
+                        <li>
+                          Agility Health Facilitator - Facilitated 50 squad
+                          health surveys, Role based assessments (PO/SM/Coaches)
+                          for tribes, growth conversations for continuous
+                          improvement for squads/people across geographies.
+                        </li>
+                        <li>
+                          Adoption of New Ways of working - Trained more than
+                          500 People across the globe to adopt to New ways of
+                          working and Remote ways of working
+                        </li>
+                        <li>
+                          Learning Assessment Programs - Designed learning
+                          assessment criterion to categorize people based on
+                          their maturity and impart targeted training programs
+                          to uplift squads
+                        </li>
+                        <li>
+                          Software Trainer - Taught software programing
+                          languages to 20 M.Tech Students from IIT KGP and 50
+                          BCA students from Hijli College
+                        </li>
+                        <li>
+                          Curated Experiential learning Program with other
+                          mentors for Scrum Masters & Agile Coaches
+                        </li>
+                        <li>
+                          Leadership Training Programs - Trained more than 30
+                          Leaders on "New ways of Leading" program
+                        </li>
+                      </ul>
+                      <h4 className="text-primary">Skills & Abilities</h4>
+                      <ul>
+                        <li>Agile Transformation</li>
+                        <li>Digital Transformation </li>
+                        <li>Business Transformation</li>
+                        <li>Training </li>
+                        <li>Facilitating</li>
+                        <li>Leadership Development</li>
+                      </ul>
                     </div>
                   </Col>
                 </Row>
