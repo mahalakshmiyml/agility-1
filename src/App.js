@@ -97,15 +97,15 @@ function App() {
         <TopMenubar />
         {/* <HomeModal /> */}
         <Routes>
-          {!auth && (
+          
             <>
               <Route path="/register" element={<Register />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/agility" element={<Home />}></Route>
             </>
-          )}
+          
 
-          {auth && (
+          
             <>
               <Route path="/agility" element={<Home />}></Route>
               <Route path="/about-us" element={<About />}></Route>
@@ -266,7 +266,7 @@ function App() {
                 element={<MentoringPromotion />}
               ></Route>
             </>
-          )}
+          
           
           <Route path="/login" element={<Navigate to={auth ? "/" : "/login" }/>}/>
         </Routes>
