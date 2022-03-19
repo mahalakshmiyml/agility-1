@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import icpEnt from "../Images/capability-building-programs/icp-ent.png";
+import agile from "../Images/agile-visa.png";
 
 const IcAgileIcpEnt = () => {
   let history = useNavigate();
@@ -39,11 +40,11 @@ const IcAgileIcpEnt = () => {
           data.schedule
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -101,8 +102,8 @@ const IcAgileIcpEnt = () => {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response)
-        // console.log(username)
+        // // console.log(response)
+        // // console.log(username)
         const paymentid = response.razorpay_payment_id;
         const Values = {
           paymentid,
@@ -110,15 +111,15 @@ const IcAgileIcpEnt = () => {
           useremail,
         }
 
-        // console.log(Values);
+        // // console.log(Values);
 
         axios.post('https://digitalagilityinstitute.com/Api/Payment/payment.php', Values)
         .then(function (response) {
-          // console.log(response);
+          // // console.log(response);
           // setformStatus(response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          // console.log(error);
           // setformStatus(error.data);
         });
 
@@ -138,14 +139,14 @@ const IcAgileIcpEnt = () => {
   useEffect(() => {
     axios
       .get(
-        "https://digitalagilityinstitute.com/Api/course-schedule/getschedule.php?coursename=ICP - ENT"
+        "courseschedule/ICP - ENT"
       )
       .then((response) => {
-        console.log(response.data);
-        setSchedule(response.data);
+        // console.log(response.data.data);
+        setSchedule(response.data.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
   return (
@@ -185,7 +186,11 @@ const IcAgileIcpEnt = () => {
             <Col md={8}>
               <Row>
                 <Col md={3} className="align-self-center">
-                  <Image src={icpEnt} alt="" className="img-fluid" />
+                  <div className="text-center">
+                    <Image src={icpEnt} alt="" className="img-fluid" />
+                    <h5 className="text-center py-1">In collaboration with</h5>
+                    <Image src={agile} alt="" className="img-fluid" />
+                  </div>
                 </Col>
                 <Col md={9} className="">
                   <h2 className="text-primary py-3 ">

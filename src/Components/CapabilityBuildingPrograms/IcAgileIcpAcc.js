@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import icpAcc from "../Images/capability-building-programs/icp-acc.png";
+import agile from "../Images/agile-visa.png";
 
 const IcAgileIcpAcc = () => {
   let history = useNavigate();
@@ -26,7 +27,7 @@ const IcAgileIcpAcc = () => {
   const onSubmit = (values) => {
     const Price = 45256;
     const data = values;
-    console.log(data);
+    // console.log(data);
 
     axios
       .get(
@@ -40,11 +41,11 @@ const IcAgileIcpAcc = () => {
           data.schedule
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -102,8 +103,8 @@ const IcAgileIcpAcc = () => {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response)
-        // console.log(username)
+        // // console.log(response)
+        // // console.log(username)
         const paymentid = response.razorpay_payment_id;
         const Values = {
           paymentid,
@@ -111,16 +112,16 @@ const IcAgileIcpAcc = () => {
           useremail,
         }
 
-        // console.log(Values);
+        // // console.log(Values);
 
         axios.post('https://digitalagilityinstitute.com/Api/Payment/payment.php', Values)
         .then(function (response) {
           
-          // console.log(response);
+          // // console.log(response);
           // setformStatus(response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          // console.log(error);
           // setformStatus(error.data);
         });
 
@@ -144,14 +145,14 @@ const IcAgileIcpAcc = () => {
   useEffect(() => {
     axios
       .get(
-        "https://digitalagilityinstitute.com/Api/course-schedule/getschedule.php?coursename=ICP - ACC"
+        "courseschedule/ICP - ACC"
       )
       .then((response) => {
-        // console.log(response.data);
-        setSchedule(response.data);
+        // console.log(response.data.data);
+        setSchedule(response.data.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 
@@ -196,6 +197,8 @@ const IcAgileIcpAcc = () => {
               <Row>
                 <Col md={3} className="align-self-center">
                   <Image src={icpAcc} alt="" className="img-fluid" />
+                  <h5 className="text-center py-1">In collaboration with</h5>
+                    <Image src={agile} alt="" className="img-fluid" />
                 </Col>
                 <Col md={9} className="">
                   <h2 className="text-primary py-3 ">

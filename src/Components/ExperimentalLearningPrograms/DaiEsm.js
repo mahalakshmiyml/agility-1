@@ -32,11 +32,11 @@ const DaiEsm = () => {
           data.schedule 
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -114,11 +114,11 @@ const DaiEsm = () => {
         "http://digitalagilityinstitute.com/Api/course-schedule/getschedule.php"
       )
       .then((response) => {
-        // console.log(response.data);
+        // // console.log(response.data);
         setSchedule(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 

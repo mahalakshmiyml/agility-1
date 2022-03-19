@@ -39,7 +39,7 @@ const Footer = () => {
                 {/* <h5 className="text-uppercase text-white pt-2 pb-2">Digital Agility Institute</h5> */}
 
                 <address className="pt-2">
-                  <p className="text-white">
+                  <p className="text-white text-center">
                     <br />
                     <a href="tel:09686409060">
                       <i className="fas fa-phone-volume"></i> +91 96864 09060

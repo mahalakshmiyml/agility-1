@@ -20,7 +20,7 @@ const HomeModal = () => {
   const onSubmit = (values) => {
     const data = values;
 
-    console.log(data);
+    // console.log(data);
 
     axios
       .get(
@@ -30,12 +30,12 @@ const HomeModal = () => {
           data.name
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
         setDownload(true);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -65,12 +65,12 @@ const HomeModal = () => {
     axios
       .get("https://digitalagilityinstitute.com/Api/popup/getdata.php")
       .then((response) => {
-        console.log(response.data[0].link);
+        // console.log(response.data[0].link);
         SetImages(response.data);
         Setlink(response.data[0].link);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
   return (

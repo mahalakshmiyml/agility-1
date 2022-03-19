@@ -20,6 +20,10 @@ $secondary-color: #eea45e;
 $ternary-color: #f8f9fa;
 $white-color: #ffffff;
 
+p {
+  text-align: justify;
+}
+
 // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
@@ -55,6 +59,7 @@ $white-color: #ffffff;
 }
 
 #navbar {
+  padding: 0px !important;
   .nav-link {
     color: $white-color;
     background-color: $primary-color;
@@ -128,6 +133,33 @@ $white-color: #ffffff;
   display: none !important;
 }
 
-#rcc-confirm-button{
-    margin-right: 200px !important;
-  }
+#rcc-confirm-button {
+  margin-right: 200px !important;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

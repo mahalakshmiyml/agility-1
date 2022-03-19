@@ -41,10 +41,10 @@ const CoachingDetails = () => {
 
   async function GetData() {
     try {
-      const response = await axios.get("https://digitalagilityinstitute.com/Api/coaching-promotion/coaching-getdata.php");
-      console.log("getdata", response.data[0]);
-      Setassociation([...Association, response.data[0]]);
-      console.log("Total", Association)
+      const response = await axios.get("mentoringdata");
+      // console.log("getdata", response.data.data[0]);
+      Setassociation([...Association, response.data.data[0]]);
+      // console.log("Total", Association)
     } catch (error) {
       console.error(error);
     }

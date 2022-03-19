@@ -16,9 +16,9 @@ const ExperientialFormik = (props) => {
 
   const onSubmit = (values) => {
     const Price = props.price;
-    console.log(Price);
+    // console.log(Price);
     const data = values;
-    console.log(data);
+    // console.log(data);
 
     axios
       .get(
@@ -30,11 +30,11 @@ const ExperientialFormik = (props) => {
           data.phone
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -92,8 +92,8 @@ const ExperientialFormik = (props) => {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response)
-        // console.log(username)
+        // // console.log(response)
+        // // console.log(username)
         const paymentid = response.razorpay_payment_id;
         const Values = {
           paymentid,
@@ -101,7 +101,7 @@ const ExperientialFormik = (props) => {
           useremail,
         };
 
-        // console.log(Values);
+        // // console.log(Values);
 
         axios
           .post(
@@ -109,11 +109,11 @@ const ExperientialFormik = (props) => {
             Values
           )
           .then(function (response) {
-            // console.log(response);
+            // // console.log(response);
             // setformStatus(response.data);
           })
           .catch(function (error) {
-            console.log(error);
+            // console.log(error);
             // setformStatus(error.data);
           });
 

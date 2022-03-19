@@ -1,12 +1,89 @@
 import React from "react";
-import { Navbar, NavDropdown, Container, Nav, Image } from "react-bootstrap";
+import {
+  Navbar,
+  NavDropdown,
+  Container,
+  Nav,
+  Image,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Logo from "../Images/logo.png";
+import Logo from "../Images/logo1.png";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../../Store/Slice/authSlice";
 
 const TopMenubar = () => {
+  const Auth = useSelector((state) => state.auth.value);
+  console.log(Auth);
+  const dispatch = useDispatch();
+
+  const logout = async () => {
+    await axios.post("logout");
+    dispatch(setAuth(false));
+  };
+
   return (
-    <div className="sticky-top">
-      <div className="bg-white shadow">
+    <div className="sticky-top shadow-sm">
+      <div className="bg-white">
+        <Container className=" border-bottom border-primary">
+          <Row>
+            <Col md={4} xs={6} className="align-self-center d-none d-md-block">
+              <div className="text-center text-md-start py-2">
+                <small>
+                  <a
+                    class="text-primary text-decoration-none fw-bold"
+                    href="tel:08147203771"
+                  >
+                    <i class="fas fa-phone-volume"></i> +91 81472 03771
+                  </a>
+                </small>
+              </div>
+            </Col>
+            <Col md={4} xs={6} className="align-self-center">
+              <div className="text-center">
+                <a
+                  class="btn-sm btn-primary text-decoration-none text-white"
+                  href="https://designrr.site/?i=k64h&t=139f64&f=1"
+                  target="_blank"
+                >
+                  <i class="fas fa-download"></i> Get live E-Book
+                </a>
+              </div>
+            </Col>
+            <Col md={4} xs={6} className="align-self-center">
+              <div className="text-center text-md-end py-1">
+                {Auth ? (
+                  <Link
+                    to="/"
+                    onClick={logout}
+                    className="btn-sm btn-primary text-decoration-none"
+                  >
+                    Logout
+                  </Link>
+                ) : (
+                  <div className="">
+                    <Link
+                      to="/register"
+                      className="mx-2 btn-sm btn-primary text-decoration-none"
+                    >
+                      Register
+                    </Link>
+                    <Link
+                      to="/login"
+                      className="btn-sm btn-primary text-decoration-none"
+                    >
+                      Login
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div className="bg-white">
         <Navbar
           collapseOnSelect
           expand="lg"
@@ -16,13 +93,13 @@ const TopMenubar = () => {
           id="navbar"
         >
           <Container>
-            <Navbar.Brand as={Link} to="/">
+            <Navbar.Brand as={Link} to="/agility">
               <Image src={Logo} alt="Shanthas Designs and Prints Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ms-auto me-auto">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link as={Link} to="/agility">
                   Home
                 </Nav.Link>
                 <Nav.Link as={Link} to="/about-us">
@@ -159,10 +236,6 @@ const TopMenubar = () => {
           </Container>
         </Navbar>
       </div>
-      {/* Calendly inline widget begin */}
-      {/* <div className="calendly-inline-widget" data-url="https://calendly.com/nivarti/15min" >hello</div> */}
-
-      {/* Calendly inline widget end */}
     </div>
   );
 };

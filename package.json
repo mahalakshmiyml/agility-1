@@ -1,9 +1,10 @@
 {
   "name": "agility-1",
   "version": "0.1.0",
-  "homepage": "https://digitalagilityinstitute.com/",
+  "homepage": "https://shanthaswebz.com/agility",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -18,6 +19,7 @@
     "react-dom": "^17.0.2",
     "react-owl-carousel2": "^0.3.0",
     "react-radar": "^2.0.0-beta.111",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "recharts": "^2.1.8",

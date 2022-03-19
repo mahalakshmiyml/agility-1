@@ -13,7 +13,7 @@ const DasaFlipbook = () => {
         return res.text();
       })
       .then((ip) => {
-        console.log("ip: " + ip);
+        // console.log("ip: " + ip);
       });
   });
 
@@ -72,10 +72,10 @@ const DasaFlipbook = () => {
     setValidated(true);
 
     // alert("hi")
-    // console.log('hello')
-    // console.log(Name)
-    // console.log(Email)
-    // console.log(Phone)
+    // // console.log('hello')
+    // // console.log(Name)
+    // // console.log(Email)
+    // // console.log(Phone)
 
     SetName(Name);
     SetEmail(Email);
@@ -88,7 +88,7 @@ const DasaFlipbook = () => {
 
     xhr.addEventListener("load", () => {
       //update email Satus email
-      console.log(xhr.responseText);
+      // console.log(xhr.responseText);
 
       SetMailStatus(xhr.responseText);
 

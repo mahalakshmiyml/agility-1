@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Image} from "react-bootstrap";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import video1 from "../Images/videos/ICP-CAT.mp4"
-import video2 from "../Images/testimonial-videos/Lisa-Feedback-final.mp4"
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import axios from 'axios';
+import video1 from "../Images/videos/ICP-CAT.mp4";
+import video2 from "../Images/testimonial-videos/Lisa-Feedback-final.mp4";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import icpCat from "../Images/capability-building-programs/icp-cat.png";
+import agile from "../Images/agile-visa.png";
 
 const IcAgileIcpCat = () => {
   let history = useNavigate();
@@ -26,7 +27,7 @@ const IcAgileIcpCat = () => {
   const onSubmit = (values) => {
     const Price = 679;
     const data = values;
-    console.log(data);
+    // console.log(data);
 
     axios
       .get(
@@ -40,11 +41,11 @@ const IcAgileIcpCat = () => {
           data.schedule
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -102,29 +103,33 @@ const IcAgileIcpCat = () => {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response)
-        // console.log(username)
+        // // console.log(response)
+        // // console.log(username)
         const paymentid = response.razorpay_payment_id;
         const Values = {
           paymentid,
           username,
           useremail,
-        }
+        };
 
-        // console.log(Values);
+        // // console.log(Values);
 
-        axios.post('https://digitalagilityinstitute.com/Api/Payment/payment.php', Values)
-        .then(function (response) {
-          // console.log(response);
-          // setformStatus(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-          // setformStatus(error.data);
-        });
+        axios
+          .post(
+            "https://digitalagilityinstitute.com/Api/Payment/payment.php",
+            Values
+          )
+          .then(function (response) {
+            // // console.log(response);
+            // setformStatus(response.data);
+          })
+          .catch(function (error) {
+            // console.log(error);
+            // setformStatus(error.data);
+          });
 
         // alert("Success payment Done.");
-        history.push('/success');
+        history.push("/success");
       },
       prefill: {
         name: username,
@@ -140,27 +145,27 @@ const IcAgileIcpCat = () => {
   useEffect(() => {
     axios
       .get(
-        "https://digitalagilityinstitute.com/Api/course-schedule/getschedule.php?coursename=ICP - CAT"
+        "courseschedule/ICP - CAT"
       )
       .then((response) => {
-        // console.log(response.data);
-        setSchedule(response.data);
+        // console.log(response.data.data);
+        setSchedule(response.data.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 
-  // console.log(Timing);
+  // // console.log(Timing);
   return (
     <>
       <div
         id="ic-agile-flipbook"
         className="pt-2 pb-2 pt-md-5 pb-md-5 bg-primary"
       >
-        <Container fluid>
+        <Container>
           <Row>
-          <Col md={12}>
+            <Col md={12}>
               <div className="">
                 <h2 className="text-center text-white">ICP - CAT</h2>
                 <nav aria-label="breadcrumb">
@@ -171,8 +176,11 @@ const IcAgileIcpCat = () => {
                       </a>
                     </li>
                     <li className="breadcrumb-item" aria-current="page">
-                      <a href="/capability-building-programs/ic-agile" className="custom">
-                      IC - Agile
+                      <a
+                        href="/capability-building-programs/ic-agile"
+                        className="custom"
+                      >
+                        IC - Agile
                       </a>
                     </li>
                     <li className="breadcrumb-item">ICP - CAT</li>
@@ -184,20 +192,35 @@ const IcAgileIcpCat = () => {
         </Container>
       </div>
       <div className="pt-3 pb-3 pt-md-5 pb-md-5">
-        <Container fluid>
+        <Container>
           <Row>
             <Col md={8}>
               <Row>
                 <Col md={3} className="align-self-center">
-                  <Image src={icpCat} alt="" className="img-fluid" />
+                  <div className="text-center">
+                    <Image src={icpCat} alt="" className="img-fluid" />
+                    <h5 className="text-center py-1">In collaboration with</h5>
+                    <Image src={agile} alt="" className="img-fluid" />
+                  </div>
                 </Col>
                 <Col md={9} className="">
                   <h2 className="text-primary py-3 ">
                     About This Certification
                   </h2>
                   <p className="text-align-justify">
-                  CP-CAT certification is one of the advanced certifications through which you will gain specific skills to be highly-effective in Enterprise Coaching and Facilitating Large Scale events required for leading Enterprise Agile Transformation.</p>
-                  <p>You will learn the skills to engage Senior Executives, Leadership within the Enterprise, the ability to design new organizational structures and drive organizational change as well as learning new tools and techniques for large group coaching in the context of enterprise-wide change.</p>
+                    CP-CAT certification is one of the advanced certifications
+                    through which you will gain specific skills to be
+                    highly-effective in Enterprise Coaching and Facilitating
+                    Large Scale events required for leading Enterprise Agile
+                    Transformation.
+                  </p>
+                  <p>
+                    You will learn the skills to engage Senior Executives,
+                    Leadership within the Enterprise, the ability to design new
+                    organizational structures and drive organizational change as
+                    well as learning new tools and techniques for large group
+                    coaching in the context of enterprise-wide change.
+                  </p>
                 </Col>
               </Row>
               <Row className="py-2">
@@ -207,10 +230,10 @@ const IcAgileIcpCat = () => {
                   </h4>
                   <ul>
                     <li>Understanding Systems and Complexity Theory</li>
+                    <li>Extending Agility to the Enterprise</li>
                     <li>
-                    Extending Agility to the Enterprise
+                      Adaptive Principles and Patterns for Organizational Design
                     </li>
-                    <li>Adaptive Principles and Patterns for Organizational Design</li>
                     <li>Understanding and Working with Executive Teams</li>
                   </ul>
                 </Col>
@@ -220,12 +243,17 @@ const IcAgileIcpCat = () => {
                     <li>Access to eLearning Portal</li>
                     <li>Course material & Work Book</li>
                     <li>Export of Miro Board</li>
-                    <li>ICP-CAT certificate from ICAgile (valid for lifetime) </li>
+                    <li>
+                      ICP-CAT certificate from ICAgile (valid for lifetime){" "}
+                    </li>
                     <li>Connect to Digital Agility Institute Community</li>
                   </ul>
                 </Col>
                 <p>
-                Our training is designed by Certified & Practicing Professional Coaches, Training from the Back of the Room practitioners specialising in delivering experiential learning programs. 
+                  Our training is designed by Certified & Practicing
+                  Professional Coaches, Training from the Back of the Room
+                  practitioners specialising in delivering experiential learning
+                  programs.
                 </p>
                 <p>
                   This masterclass is delivered by practicing professional
@@ -242,7 +270,10 @@ const IcAgileIcpCat = () => {
                     <li>Enterprise Agile Coaches and aspiring coaches</li>
                     <li>Scrum Masters, Agile Project Managers</li>
                     <li>Change Managers & Change Agents </li>
-                    <li>And anyone with the desire to explore the power of Organizational Change.</li>
+                    <li>
+                      And anyone with the desire to explore the power of
+                      Organizational Change.
+                    </li>
                   </ul>
                 </Col>
                 <Col md={6} className="pb-3 pt-md-2 pb-md-2">
@@ -297,7 +328,7 @@ const IcAgileIcpCat = () => {
                 <p>
                   Course Price: <del>${CourseActualPrice}</del>{" "}
                   <strong> ${CoursePrice}</strong>
-                </p>                
+                </p>
                 <p>
                   Course Price: <del> (INR 113255/-) </del>{" "}
                   <strong> (INR 51300/-)</strong>

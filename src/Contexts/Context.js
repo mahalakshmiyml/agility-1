@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  console.log("reducer", state, action);
+  // console.log("reducer", state, action);
   switch (action.type) {
     case "NEXT_QUESTION": {
       const showResults =

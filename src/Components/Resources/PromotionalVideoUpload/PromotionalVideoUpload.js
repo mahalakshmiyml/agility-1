@@ -27,11 +27,11 @@ const PromotionalVideoUpload = () => {
           data.link
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
   };
@@ -43,15 +43,15 @@ const PromotionalVideoUpload = () => {
   });
 
   const handleDeleteClick = (id) => {
-    // console.log("delete");
+    // // console.log("delete");
     axios
       .get("https://digitalagilityinstitute.com/Api/coaching-promotion/delete.php?id=" + id)
       .then((response) => {
-        console.log("Response", response);
+        // console.log("Response", response);
         GetData();
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
@@ -59,11 +59,11 @@ const PromotionalVideoUpload = () => {
     axios
       .get("https://digitalagilityinstitute.com/Api/coaching-promotion/coaching-getdata.php")
       .then((response) => {
-        console.log("getdata", response.data);
+        // console.log("getdata", response.data);
         setDetails(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 

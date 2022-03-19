@@ -13,11 +13,11 @@ const ExperientialPopup = (props) => {
         "https://digitalagilityinstitute.com/Api/course-schedule/getschedule.php?coursename={props.coursename}"
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setSchedule(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 

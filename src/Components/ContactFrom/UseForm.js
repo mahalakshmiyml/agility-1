@@ -19,7 +19,7 @@ const UseForm = (Validation) => {
 
     Seterrors(Validation(values));
 
-    console.log(values.name, values.email, values.phone, values.subject);
+    // console.log(values.name, values.email, values.phone, values.subject);
 
     axios
       .get(
@@ -35,11 +35,11 @@ const UseForm = (Validation) => {
           values.message
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         SetMailStatus(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 

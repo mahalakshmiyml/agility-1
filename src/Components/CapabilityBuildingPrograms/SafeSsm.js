@@ -38,11 +38,11 @@ const SafeSsm = () => {
           data.schedule
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
 
@@ -100,8 +100,8 @@ const SafeSsm = () => {
 
       handler: function (response) {
         // alert(response.razorpay_payment_id);
-        // console.log(response)
-        // console.log(username)
+        // // console.log(response)
+        // // console.log(username)
         const paymentid = response.razorpay_payment_id;
         const Values = {
           paymentid,
@@ -109,15 +109,15 @@ const SafeSsm = () => {
           useremail,
         }
 
-        // console.log(Values);
+        // // console.log(Values);
 
         axios.post('https://digitalagilityinstitute.com/Api/Payment/payment.php', Values)
         .then(function (response) {
-          // console.log(response);
+          // // console.log(response);
           // setformStatus(response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          // console.log(error);
           // setformStatus(error.data);
         });
 
@@ -140,11 +140,11 @@ const SafeSsm = () => {
         "https://digitalagilityinstitute.com/Api/course-schedule/getschedule.php?coursename=SAFe5 - SSM"
       )
       .then((response) => {
-        // console.log(response.data);
+        // // console.log(response.data);
         setSchedule(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
   return (

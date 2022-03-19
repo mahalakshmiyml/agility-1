@@ -54,10 +54,10 @@ const MentoringDetails = () => {
 
   async function GetData() {
     try {
-      const response = await axios.get("https://digitalagilityinstitute.com/Api/promotion-mentoring/coaching-getdata.php");
-      console.log("getdata", response.data[0]);
-      Setassociation([...Association, response.data[0]]);
-      console.log("Total", Association)
+      const response = await axios.get("coachingdata");
+      // console.log("getdata", response.data.data[0]);
+      Setassociation([...Association, response.data.data[0]]);
+      // console.log("Total", Association)
     } catch (error) {
       console.error(error);
     }
@@ -68,7 +68,7 @@ const MentoringDetails = () => {
     GetData();
   }, [Setassociation])
 
-  console.log(Association)
+  // console.log(Association)
 
   return (
     <div>

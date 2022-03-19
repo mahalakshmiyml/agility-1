@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row, Container, Button, Image } from "react-bootstrap";
 import MainSlider from "./Includes/MainSlider";
 import Mentoring from "./Includes/MentoringDetails";
@@ -6,17 +6,36 @@ import Coaching from "./Includes/CoachingDetails";
 import Training from "./Includes/TrainingDetails";
 import Slide1 from "./Images/temp1.png";
 import YouTubeVideos from "./Includes/YouTubeVideos";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "react-owl-carousel2/src/owl.carousel.css";
 import "react-owl-carousel2/src/owl.theme.default.css";
-import HomeTestimonials from './Includes/HomeTestimonials';
-import HomeAssessments from './Includes/HomeAssessments';
+import HomeTestimonials from "./Includes/HomeTestimonials";
+import HomeAssessments from "./Includes/HomeAssessments";
 import HomeDIY from "./Includes/HomeDIY";
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../Store/Slice/authSlice";
+import axios from "axios";
 
 const Home = () => {
+  const [message, setMessage] = useState("You are not authenticated");
+  const dispatch = useDispatch();
+  const auth = useSelector( (state) => state.auth.value);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get("login");
+        setMessage(`Hi ${data.user[0].firstname} ${data.user[0].lastname}`);
+        dispatch(setAuth(true));
+      } catch (err) {
+        setMessage("You are not authenticated");
+        dispatch(setAuth(false));
+      }
+    })();
+  });
+
   return (
     <>
-      
       <MainSlider />
       <div id="about" className="pt-3 pb-3 pt-md-5 pb-md-5 bg-light">
         <Container>

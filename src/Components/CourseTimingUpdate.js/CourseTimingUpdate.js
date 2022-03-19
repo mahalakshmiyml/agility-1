@@ -15,7 +15,7 @@ const CourseTimingUpdate = () => {
   const onSubmit = (values) => {
     const data = values;
 
-    console.log(data);
+    // console.log(data);
 
     axios
       .get(
@@ -25,11 +25,11 @@ const CourseTimingUpdate = () => {
           data.coursetiming
       )
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setformStatus(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         setformStatus(error.data);
       });
   };

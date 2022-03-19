@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import Miland from "./Images/about/miland.png";
 import anu from "./Images/about/anu.png";
 import maheswari from "./Images/about/nagamaheshwari.png";
 import jayaram from "./Images/about/jayaram.png";
 import Mahesh from "./Images/about/mahesh.png";
+import jayramCertifications from "./Images/about/jayarm-certifications.png";
+import anuCertifications from "./Images/about/anu-certifications.png";
 
 const About = () => {
   return (
@@ -125,6 +127,17 @@ const About = () => {
                           <a href="https://www.youtube.com/nivartijayaram">
                             <i class="fab fa-youtube fs-3 text-danger mx-2"></i>
                           </a>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="justified-content-center">
+                      <Col md={12}>
+                        <div className="text-center">
+                          <Image
+                            src={jayramCertifications}
+                            alt="Certifications"
+                            className="img-fluid"
+                          />
                         </div>
                       </Col>
                     </Row>
@@ -299,6 +312,13 @@ const About = () => {
                             <i class="fab fa-youtube fs-3 text-danger mx-2"></i>
                           </a>
                         </div>
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Col md={12}>
+                         <div className="text-center">
+                           <Image src={anuCertifications} alt="certifcations" className="img-fluid" />
+                           </div>   
                       </Col>
                     </Row>
                   </Col>

@@ -5,7 +5,7 @@ import Question from "./Question";
 
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
-  console.log("quizState", quizState);
+  // console.log("quizState", quizState);
   return (
     <div>
       <Container className="pt-5 pb-5">

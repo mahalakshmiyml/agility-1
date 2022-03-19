@@ -7,20 +7,20 @@ const MainSlider = () => {
   const [slides, SetSlides] = useState([]);
   // const slides = [
   //   { id: 1, src: Slide1, alt: "" },
-  //   // { id: 2, src: Slide2, alt: "" },
-  //   // { id: 3, src: Slide3, alt: "" },
+    // { id: 2, src: Slide2, alt: "" },
+    // { id: 3, src: Slide3, alt: "" },
   // ];
 
   useEffect(() => {
     axios
-      .get("https://digitalagilityinstitute.com/Api/getdata.php")
+      .get("getdata")
       .then((response) => {
-        console.log(response);
-        SetSlides(response.data);
-        // console.log(Slide2);
+        // console.log(response.data.data);
+        SetSlides(response.data.data);
+        // // console.log(Slide2);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 
